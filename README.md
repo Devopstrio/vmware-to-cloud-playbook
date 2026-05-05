@@ -189,32 +189,145 @@ graph LR
     Legacy -->|No| Replatform
 ```
 
+**HCX Replication Lifecycle:**
+```mermaid
+graph TD
+    Source[On-Prem Site] --> Pairing[Site Pairing]
+    Pairing --> Mesh[Interconnect Mesh]
+    Mesh --> L2[L2 Extension]
+    L2 --> Sync[Bulk Migration / vMotion]
+```
+
 ### 3. Distributed Transformation Topology (Migration Factory)
 Strategically orchestrating standardized transformation across global regions and diverse resource architectures, providing a unified institutional view of migration velocity.
+
+```mermaid
+graph TD
+    Factory[Global Migration Factory] --> EMEA[EMEA Migration Node]
+    Factory --> AMER[AMER Migration Node]
+    EMEA --> vCenter1[London vCenter]
+    AMER --> vCenter2[New York vCenter]
+```
+
+**Wave Orchestration Map:**
+```mermaid
+graph LR
+    Wave1[Wave 1: Pilot] --> Wave2[Wave 2: Production A]
+    Wave2 --> Wave3[Wave 3: Production B]
+    Wave3 --> Wave4[Wave 4: Cleanup/Retire]
+```
 
 ### 4. Governance Hub & Control Plane Flow (6R Strategy)
 Executing complex logic for securing the bridge between on-premises workloads and cloud targets, ensuring every migration is authorized, costs are modeled, and executive oversight is maintained.
 
+```mermaid
+graph LR
+    Request[Migrate VM] --> Auth{Auth Check}
+    Auth --> Valid{6R Strategy Valid?}
+    Valid --> Approve[Execute Migration]
+```
+
+**Migration ROI Calculator:**
+```mermaid
+graph TD
+    CostOnPrem[On-Prem TCO] --> Compare[ROI Engine]
+    CostCloud[Cloud TCO + Migration Cost] --> Compare
+    Compare --> Report[Business Case Report]
+```
+
 ### 5. Multi-Cloud Transformation Federation (Cloud Target Landing Zones)
 Automatically managing unified transformation standards across global regions and diverse cloud tenants, ensuring institutional data residency and privacy boundaries by default.
+
+```mermaid
+graph LR
+    AVS[Azure VMware Solution] <-->|Cross-Cloud| VMC[VMware Cloud on AWS]
+    AVS <--> GCVE[Google Cloud VMware Engine]
+```
 
 ### 6. Encryption & Perimeter Protection Flow (Secure Connectivity)
 Managing the lifecycle of a migration request, automatically enforcing institutional TLS 1.3 and encrypted tunnel standards (ExpressRoute, Direct Connect, Hub-VNet) as required by security policy, ensuring zero-latency transformation confidence.
 
+```mermaid
+graph LR
+    OnPrem[On-Prem Site] -->|IPsec VPN| Hub[Security Hub]
+    Hub -->|TLS 1.3| Cloud[Target Landing Zone]
+```
+
+**Network Extension Security:**
+```mermaid
+graph TD
+    L2[L2 Extension] --> FW[L7 Firewall Inspection]
+    FW --> Segment[Isolated Spoke VNet]
+```
+
 ### 7. Institutional Transformation Maturity Scorecard (Migration Dashboard)
 Grading organizational performance based on key indicators: Migration Velocity Index, 6R Alignment Success, and Modernization Adoption Scores.
+
+```mermaid
+graph TD
+    V[Velocity] --> Score[Migration Maturity]
+    Q[Quality/Stability] --> Score
+    S[Strategy Alignment] --> Score
+```
 
 ### 8. Identity & RBAC for Transformation Governance
 Managing fine-grained access to migration hubs, provisioning workers, and audit logs between Migration Teams and Infrastructure principals.
 
+```mermaid
+graph LR
+    Engineer[Migration Engineer] -->|Wave: Execute| Hub[Migration Hub]
+    Owner[Business Owner] -->|Strategy: Approve| Hub
+```
+
+**Identity Bridge Strategy:**
+```mermaid
+graph TD
+    AD[On-Prem AD] -->|Sync| Entra[Microsoft Entra ID]
+    Entra -->|SSO| Portal[Migration Command Center]
+```
+
 ### 9. IaC Deployment: VMware-to-Cloud-Playbook-as-Code Framework
 Using modular CI/CD pipelines to deploy and manage the versioned distribution of the transformation landing zones, migration workers, and validation fleets.
+
+```mermaid
+graph LR
+    TF[Terraform] --> AVS[Deploy AVS Cluster]
+    TF --> Net[Deploy Secure Networking]
+    TF --> HCX[Install HCX Components]
+```
 
 ### 10. AIOps Transformation Drift & Risk Validation Flow
 Using advanced analytics to identify sudden surges in replication lag, unauthorized migration changes, or unusual delivery pattern changes that could result in institutional risk or downtime.
 
+```mermaid
+graph TD
+    Lag[Replication Lag Alert] --> AI[Predictive Analytics]
+    AI --> Action[Adjust Bandwidth Throttling]
+```
+
+**Cutover Risk Analysis:**
+```mermaid
+graph LR
+    Pre[Pre-Cutover Checklist] --> Run[Execute Cutover]
+    Run --> Post[Post-Cutover Validation]
+    Post -->|Fail| Rollback[Automated Rollback]
+```
+
 ### 11. Metadata Lake for Forensic Transformation Audit
 Storing long-term records of every transformation event (metadata), every migration executed, and every performance telemetry for institutional record-keeping and forensic analysis.
+
+```mermaid
+graph LR
+    Event[Migration Event] -->|JSON| Lake[Migration Metadata Lake]
+    Lake --> Audit[Compliance Report]
+```
+
+**VM Metadata Retention:**
+```mermaid
+graph TD
+    VM[VM Metadata] --> History[Version History]
+    History --> Evidence[Audit Evidence Pack]
+```
 
 ---
 
